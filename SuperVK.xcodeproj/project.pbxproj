@@ -10,7 +10,10 @@
 		BB2E4720296AD9BB00BB219B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E471F296AD9BB00BB219B /* MainView.swift */; };
 		BB2E4723296ADB0E00BB219B /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E4722296ADB0E00BB219B /* Groups.swift */; };
 		BB2E4726296ADB9400BB219B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E4725296ADB9400BB219B /* Message.swift */; };
-		BBC80D2C29156AC400B4040B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80D2B29156AC400B4040B /* Extension.swift */; };
+		BB2E4729296AF97300BB219B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E4728296AF97300BB219B /* NetworkService.swift */; };
+		BB2E472B296AFACD00BB219B /* NetworkMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E472A296AFACD00BB219B /* NetworkMethods.swift */; };
+		BB2E4730296AFC4200BB219B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E472F296AFC4200BB219B /* LoginModel.swift */; };
+		BBC80D2C29156AC400B4040B /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80D2B29156AC400B4040B /* Modifiers.swift */; };
 		BBC80D2F2916543600B4040B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80D2E2916543600B4040B /* Feed.swift */; };
 		BBDF0007291513C6002D2A69 /* SuperVKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF0006291513C6002D2A69 /* SuperVKApp.swift */; };
 		BBDF0009291513C6002D2A69 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF0008291513C6002D2A69 /* Login.swift */; };
@@ -22,7 +25,10 @@
 		BB2E471F296AD9BB00BB219B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BB2E4722296ADB0E00BB219B /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		BB2E4725296ADB9400BB219B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		BBC80D2B29156AC400B4040B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		BB2E4728296AF97300BB219B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		BB2E472A296AFACD00BB219B /* NetworkMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethods.swift; sourceTree = "<group>"; };
+		BB2E472F296AFC4200BB219B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		BBC80D2B29156AC400B4040B /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		BBC80D2E2916543600B4040B /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BBDF0003291513C6002D2A69 /* SuperVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDF0006291513C6002D2A69 /* SuperVKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperVKApp.swift; sourceTree = "<group>"; };
@@ -66,6 +72,32 @@
 			path = Message;
 			sourceTree = "<group>";
 		};
+		BB2E4727296AF93E00BB219B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E4728296AF97300BB219B /* NetworkService.swift */,
+				BB2E472A296AFACD00BB219B /* NetworkMethods.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BB2E472C296AFBEA00BB219B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BBDF0008291513C6002D2A69 /* Login.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BB2E472D296AFBF500BB219B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBC80D2B29156AC400B4040B /* Modifiers.swift */,
+				BB2E472F296AFC4200BB219B /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BBC80D2D2916542A00B4040B /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				BBDF0015291513F4002D2A69 /* Screens */,
-				BBF0F112291AB6EA003D89F6 /* Components */,
 				BBDF000A291513C7002D2A69 /* Assets.xcassets */,
 				BBDF000C291513C7002D2A69 /* Preview Content */,
 			);
@@ -124,8 +155,8 @@
 		BBDF001629151401002D2A69 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BBDF0008291513C6002D2A69 /* Login.swift */,
-				BBC80D2B29156AC400B4040B /* Extension.swift */,
+				BB2E472D296AFBF500BB219B /* Model */,
+				BB2E472C296AFBEA00BB219B /* View */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -133,17 +164,11 @@
 		BBDFFFFA291513C6002D2A69 = {
 			isa = PBXGroup;
 			children = (
+				BB2E4727296AF93E00BB219B /* Services */,
 				BBDF0014291513E2002D2A69 /* Application */,
 				BBDF0005291513C6002D2A69 /* SuperVK */,
 				BBDF0004291513C6002D2A69 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		BBF0F112291AB6EA003D89F6 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +241,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBC80D2C29156AC400B4040B /* Extension.swift in Sources */,
+				BBC80D2C29156AC400B4040B /* Modifiers.swift in Sources */,
 				BBC80D2F2916543600B4040B /* Feed.swift in Sources */,
+				BB2E4729296AF97300BB219B /* NetworkService.swift in Sources */,
 				BBDF0009291513C6002D2A69 /* Login.swift in Sources */,
+				BB2E472B296AFACD00BB219B /* NetworkMethods.swift in Sources */,
+				BB2E4730296AFC4200BB219B /* LoginModel.swift in Sources */,
 				BB2E4720296AD9BB00BB219B /* MainView.swift in Sources */,
 				BBDF0007291513C6002D2A69 /* SuperVKApp.swift in Sources */,
 				BB2E4723296ADB0E00BB219B /* Groups.swift in Sources */,

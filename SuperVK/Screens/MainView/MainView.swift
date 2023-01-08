@@ -24,13 +24,25 @@ struct MainView: View {
                         Label("Сообщения", systemImage: "bubble.middle.bottom")
                     }
             }
+            
+            // MARK: Tab bar style configuration
+            .accentColor(Color.accentColor)
+            
+            // MARK: - Navigation bar style configuration
+            
             .navigationTitle(Text("Новости"))
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.accentColor, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
                         Image(systemName: "newspaper")
+                            .foregroundColor(.white)
+                            .font(Font.headline)
                         Text("Новости")
+                            .foregroundColor(.white)
+                            .font(Font.headline)
                     }
                 }
             }
