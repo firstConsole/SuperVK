@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB2E4720296AD9BB00BB219B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E471F296AD9BB00BB219B /* MainView.swift */; };
+		BB2E4723296ADB0E00BB219B /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E4722296ADB0E00BB219B /* Groups.swift */; };
+		BB2E4726296ADB9400BB219B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E4725296ADB9400BB219B /* Message.swift */; };
 		BBC80D2C29156AC400B4040B /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80D2B29156AC400B4040B /* Extension.swift */; };
 		BBC80D2F2916543600B4040B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80D2E2916543600B4040B /* Feed.swift */; };
 		BBDF0007291513C6002D2A69 /* SuperVKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF0006291513C6002D2A69 /* SuperVKApp.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB2E471F296AD9BB00BB219B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BB2E4722296ADB0E00BB219B /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
+		BB2E4725296ADB9400BB219B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BBC80D2B29156AC400B4040B /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		BBC80D2E2916543600B4040B /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BBDF0003291513C6002D2A69 /* SuperVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +42,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB2E471E296AD9AB00BB219B /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E471F296AD9BB00BB219B /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		BB2E4721296ADAFD00BB219B /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E4722296ADB0E00BB219B /* Groups.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		BB2E4724296ADB7F00BB219B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E4725296ADB9400BB219B /* Message.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 		BBC80D2D2916542A00B4040B /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,8 +112,11 @@
 		BBDF0015291513F4002D2A69 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				BBC80D2D2916542A00B4040B /* Feed */,
+				BB2E471E296AD9AB00BB219B /* MainView */,
 				BBDF001629151401002D2A69 /* Login */,
+				BBC80D2D2916542A00B4040B /* Feed */,
+				BB2E4721296ADAFD00BB219B /* Groups */,
+				BB2E4724296ADB7F00BB219B /* Message */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -186,7 +219,10 @@
 				BBC80D2C29156AC400B4040B /* Extension.swift in Sources */,
 				BBC80D2F2916543600B4040B /* Feed.swift in Sources */,
 				BBDF0009291513C6002D2A69 /* Login.swift in Sources */,
+				BB2E4720296AD9BB00BB219B /* MainView.swift in Sources */,
 				BBDF0007291513C6002D2A69 /* SuperVKApp.swift in Sources */,
+				BB2E4723296ADB0E00BB219B /* Groups.swift in Sources */,
+				BB2E4726296ADB9400BB219B /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

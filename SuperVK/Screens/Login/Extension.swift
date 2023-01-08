@@ -53,7 +53,7 @@ extension Text {
 
 extension Login {
     func checkLogin(login: String, password: String) {
-        if login == "Admin" && password == "123" {
+        if login == "Admin" && password == "1234" {
             isSelected = true
         } else {
             isAlertShow = true
