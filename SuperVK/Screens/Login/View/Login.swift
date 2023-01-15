@@ -18,16 +18,15 @@ struct Login: View {
             ZStack {
                 HStack {
                     VStack(spacing: 10) {
-                        ScrollView {
-                            Text("Добро пожаловать")
-                                .formatWelcomeText()
-                            
-                            Image("logo_2048_clean")
-                                .resizable()
-                                .frame(width: 80, height: 78)
-                                .offset(y: 35)
-                                .shadow(radius: 3)
-                        }
+                        Text("Добро пожаловать")
+                            .formatWelcomeText()
+                        
+                        Image("logo_2048_clean")
+                            .resizable()
+                            .frame(width: 80, height: 78)
+                            .offset(y: 35)
+                            .shadow(radius: 3)
+                        Spacer()
                     }
                 }
                 
@@ -47,28 +46,30 @@ struct Login: View {
                             .modifier(formatTextForLoginScreen())
                     }
                     
-                    TextField("Введите пароль", text: $password)
+                    SecureField("Введите пароль", text: $password)
                         .modifier(formatTextFieldForLoginScreen())
                     
                     Button("Войти") {
                         checkLogin(login: login, password: password)
-                    }.sheet(isPresented: $isSelected) {
-                        Feed()
                     }
                     .alert(Text("Ошибка логина или пароля"),
                            isPresented: $isAlertShow) {
                         Button("OK", role: .cancel) {}
                     }
-                           .foregroundColor(.white)
-                           .font(.headline)
-                           .fontWeight(.medium)
-                           .padding()
-                           .padding(.horizontal)
-                           .padding(.vertical, 0)
-                           .background(Color(UIColor(.accentColor)))
-                           .cornerRadius(15)
-                           .shadow(radius: 5)
-                           .padding(20)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .fontWeight(.medium)
+                    .padding()
+                    .padding(.horizontal)
+                    .padding(.vertical, 0)
+                    .background(Color(UIColor(.accentColor)))
+                    .cornerRadius(15)
+                    .shadow(radius: 5)
+                    .padding(20)
+                    
+                    NavigationLink(destination: MainView(),
+                                   isActive: $isSelected) {
+                    }
                 }
             }
         }

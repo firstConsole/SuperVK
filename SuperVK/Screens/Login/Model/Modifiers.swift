@@ -1,5 +1,5 @@
 //
-//  Extension.swift
+//  Modifiers.swift
 //  SuperVK
 //
 //  Created by Алексей Артамонов on 04.11.2022.
@@ -49,17 +49,6 @@ extension Text {
     }
 }
 
-// MARK: - Login check
-
-extension Login {
-    func checkLogin(login: String, password: String) {
-        if login == "Admin" && password == "123" {
-            isSelected = true
-        } else {
-            isAlertShow = true
-        }
-    }
-}
 
 
 
