@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct Groups: View {
+    
     var body: some View {
-        Text("Здесь будут группы...")
+        NavigationStack {
+            VStack {
+                
+            }
+        }
     }
 }
 

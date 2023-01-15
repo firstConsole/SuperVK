@@ -11,7 +11,7 @@ import SwiftUI
 struct SuperVKApp: App {
     var body: some Scene {
         WindowGroup {
-            Login()
+            WebLogin()
         }
     }
 }

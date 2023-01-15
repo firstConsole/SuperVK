@@ -19,9 +19,13 @@ struct MainView: View {
                     .tabItem {
                         Label("Группы", systemImage: "person.2.crop.square.stack")
                     }
+                Friends()
+                    .tabItem {
+                        Label("Друзья", systemImage: "person.2")
+                    }
                 Message()
                     .tabItem {
-                        Label("Сообщения", systemImage: "bubble.middle.bottom")
+                        Label("Чаты", systemImage: "bubble.middle.bottom")
                     }
             }
             
@@ -30,7 +34,7 @@ struct MainView: View {
             
             // MARK: - Navigation bar style configuration
             
-            .navigationTitle(Text("Новости"))
+//            .navigationTitle(Text("Новости"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)

@@ -19,17 +19,18 @@ extension Login {
     }
 }
 
-extension Login {
-    func logIn() {
-        let networkService = NetworkSevice()
-        let urlSession = networkService.urlSession
-        let options: [URLQueryItem] = [
-            URLQueryItem(name: "client_id", value: "8140202"),
-            URLQueryItem(name: "display", value: "mobile"),
-            URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-            URLQueryItem(name: "scope", value: "wall, photos, friends, groups"),
-            URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "revoke", value: "0")
-        ]
+extension WebLogin {
+    func checkLogin(token: String?, id: Int?) {
+//        guard let token = token,
+//              let id = id
+//        else {
+//            return
+//        }
+        
+        if token != nil && id != nil {
+            isSelected = true
+        } else {
+            print("Token & ID is nil")
+        }
     }
 }
