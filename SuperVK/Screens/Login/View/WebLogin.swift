@@ -10,23 +10,29 @@ import SwiftUI
 struct WebLogin: View {
     
     @State var isSelected: Bool = false
-    private let tokenSavedPublisher = NotificationCenter.default.publisher(for: NSNotification.Name("vkTokenSaved"))
+    //
+    //    private let token = Session.authentification.token
+    //    private let id = Session.authentification.id
+    
+    @StateObject private var session = Session.authentification
     
     var body: some View {
         NavigationView {
             HStack {
                 WebView()
-                NavigationLink(destination: MainView(), isActive: $isSelected) {
+                    .onReceive(session.token.publisher) { _ in
+                        isSelected = true
+                    }
+                
+                NavigationLink(destination: MainView(),
+                               isActive: $isSelected) {
                     EmptyView()
                 }
             }
-            .onReceive(tokenSavedPublisher) { _ in
-                isSelected = true
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
+
 
 struct WebLogin_Previews: PreviewProvider {
     static var previews: some View {

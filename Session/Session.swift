@@ -7,14 +7,15 @@
 
 import Foundation
 
-final class Session {
+final class Session: ObservableObject {
     
     static let authentification = Session()
     
     private init() {}
     
-    var token: String?
+    @Published var token: String?
     var id: Int?
+    
     var json: Any?
     var urlSession: URLSession {
         let configuration = URLSessionConfiguration.default

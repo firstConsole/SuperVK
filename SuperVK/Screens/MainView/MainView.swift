@@ -34,7 +34,6 @@ struct MainView: View {
             
             // MARK: - Navigation bar style configuration
             
-//            .navigationTitle(Text("Новости"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.accentColor, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
