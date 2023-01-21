@@ -9,14 +9,27 @@ import SwiftUI
 
 struct Groups: View {
     
+    @State var groups: [GroupsItems] = []
+    @State var imageGroup: UIImage?
+    let getGroups = GetGroups()
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                
+        VStack {
+            Button {
+                loadGroups()
+            } label: {
+                Text("LOAD GROUPS DATA")
+            }
+            
+            List(groups) { item in
+                GroupsCell(groupImage: item.photo200,
+                           groupName: item.name,
+                           groupDescription: item.screenName)
             }
         }
     }
 }
+
 
 struct Groups_Previews: PreviewProvider {
     static var previews: some View {

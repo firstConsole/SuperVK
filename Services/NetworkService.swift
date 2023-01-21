@@ -51,4 +51,23 @@ final class NetworkSevice {
         
         return url
     }
+    
+    /// Service for load images
+    func imageLoad(url: URL, completion: @escaping(Result<Data, Error>) -> Void) {
+        let completionOnMain: (Result<Data, Error>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        Session.authentification.urlSession.dataTask(with: url) { data, response, error in
+            guard let responseData = data, error == nil else {
+                if let error = error {
+                    completionOnMain(.failure(error))
+                    print(error)
+                }
+                return
+            }
+            completionOnMain(.success(responseData))
+        }.resume()
+    }
 }

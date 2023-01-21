@@ -12,34 +12,24 @@ struct JSONModel: Codable {
 }
 
 struct Response: Codable {
-    let items: [FeedItems]
-    let profiles: [ProfilesItems]
-    let groups: [GroupsItems]
-    let nextFrom: String
+    let items: [GroupsItems]
+    let nextFrom: String?
     
     enum CodingKeys: String, CodingKey {
-        case items, profiles, groups
+        case items
         case nextFrom = "next_from"
     }
 }
 
-struct GroupsItems: Codable {
-    let id: Int
-    let name: String
-    let screenName: String
-    let photo200: String
+struct GroupsItems: Codable, Identifiable {
+    let id: Int?
+    let name: String?
+    let screenName: String?
+    let photo200: String?
     
     enum CodingKeys: String, CodingKey {
         case id, name
         case screenName = "screen_name"
         case photo200 = "photo_200"
     }
-}
-
-struct FeedItems: Codable {
-    
-}
-
-struct ProfilesItems: Codable {
-    
 }

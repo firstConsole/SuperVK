@@ -10,9 +10,6 @@ import SwiftUI
 struct WebLogin: View {
     
     @State var isSelected: Bool = false
-    //
-    //    private let token = Session.authentification.token
-    //    private let id = Session.authentification.id
     
     @StateObject private var session = Session.authentification
     
@@ -23,7 +20,6 @@ struct WebLogin: View {
                     .onReceive(session.token.publisher) { _ in
                         isSelected = true
                     }
-                
                 NavigationLink(destination: MainView(),
                                isActive: $isSelected) {
                     EmptyView()

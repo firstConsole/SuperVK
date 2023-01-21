@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -28,28 +29,10 @@ struct MainView: View {
                         Label("Чаты", systemImage: "bubble.middle.bottom")
                     }
             }
-            
-            // MARK: Tab bar style configuration
-            .accentColor(Color.accentColor)
-            
-            // MARK: - Navigation bar style configuration
-            
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Image(systemName: "newspaper")
-                            .foregroundColor(.white)
-                            .font(Font.headline)
-                        Text("Новости")
-                            .foregroundColor(.white)
-                            .font(Font.headline)
-                    }
-                }
-            }
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(Text("VK APP SWIFTUI"))
     }
 }
 

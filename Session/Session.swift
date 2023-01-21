@@ -14,6 +14,7 @@ final class Session: ObservableObject {
     private init() {}
     
     @Published var token: String?
+    
     var id: Int?
     
     var json: Any?
