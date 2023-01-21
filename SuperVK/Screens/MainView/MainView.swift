@@ -32,7 +32,6 @@ struct MainView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(Text("VK APP SWIFTUI"))
     }
 }
 
