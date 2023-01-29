@@ -67,7 +67,10 @@ final class GetGroups {
     }
     
     func loadImage(url: String, completion: @escaping(UIImage) -> Void) {
-        guard let url = URL(string: url) else { return }
+        guard let url = URL(string: url) else {
+            return
+        }
+        
         networkService.imageLoad(url: url) { result in
             switch result {
             case .success(let data):
@@ -75,20 +78,6 @@ final class GetGroups {
                 completion(image)
             case .failure(let error):
                 print(error)
-            }
-        }
-    }
-}
-
-extension Groups {
-    func loadGroups() {
-        
-        getGroups.loadGroups { result in
-            switch result {
-            case .success(let data):
-                self.groups = data
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }

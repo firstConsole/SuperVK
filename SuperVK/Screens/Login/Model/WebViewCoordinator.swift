@@ -42,8 +42,6 @@ final class WebViewCoordinator: NSObject, WKNavigationDelegate {
             session.token = token
             session.id = Int(userId)
             decisionHandler(.cancel)
-            
-            
         }
     }
 }

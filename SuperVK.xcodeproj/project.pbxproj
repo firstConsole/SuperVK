@@ -21,6 +21,8 @@
 		BB2E47472973FA9D00BB219B /* JSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E47462973FA9D00BB219B /* JSONModel.swift */; };
 		BB2E474D297BD71100BB219B /* GroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E474C297BD71100BB219B /* GroupsCell.swift */; };
 		BB2E474F297BE26800BB219B /* GetGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E474E297BE26800BB219B /* GetGroups.swift */; };
+		BB2E47562986783A00BB219B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E47552986783A00BB219B /* NavigationBar.swift */; };
+		BB2E475929867AD500BB219B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2E475829867AD500BB219B /* TabBar.swift */; };
 		BBC80D2C29156AC400B4040B /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80D2B29156AC400B4040B /* Modifiers.swift */; };
 		BBC80D2F2916543600B4040B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC80D2E2916543600B4040B /* Feed.swift */; };
 		BBDF0007291513C6002D2A69 /* SuperVKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF0006291513C6002D2A69 /* SuperVKApp.swift */; };
@@ -44,6 +46,8 @@
 		BB2E47462973FA9D00BB219B /* JSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONModel.swift; sourceTree = "<group>"; };
 		BB2E474C297BD71100BB219B /* GroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsCell.swift; sourceTree = "<group>"; };
 		BB2E474E297BE26800BB219B /* GetGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGroups.swift; sourceTree = "<group>"; };
+		BB2E47552986783A00BB219B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		BB2E475829867AD500BB219B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		BBC80D2B29156AC400B4040B /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		BBC80D2E2916543600B4040B /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BBDF0003291513C6002D2A69 /* SuperVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +163,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BB2E47522986781A00BB219B /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E47552986783A00BB219B /* NavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		BB2E475729867AC500BB219B /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BB2E475829867AD500BB219B /* TabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		BBC80D2D2916542A00B4040B /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +224,8 @@
 		BBDF0015291513F4002D2A69 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BB2E47522986781A00BB219B /* NavigationBar */,
+				BB2E475729867AC500BB219B /* TabBar */,
 				BB2E471E296AD9AB00BB219B /* MainView */,
 				BBDF001629151401002D2A69 /* Login */,
 				BBC80D2D2916542A00B4040B /* Feed */,
@@ -320,9 +342,11 @@
 				BB2E4720296AD9BB00BB219B /* MainView.swift in Sources */,
 				BBDF0007291513C6002D2A69 /* SuperVKApp.swift in Sources */,
 				BB2E473729729E4E00BB219B /* WebView.swift in Sources */,
+				BB2E47562986783A00BB219B /* NavigationBar.swift in Sources */,
 				BB2E4723296ADB0E00BB219B /* Groups.swift in Sources */,
 				BB2E47472973FA9D00BB219B /* JSONModel.swift in Sources */,
 				BB2E4726296ADB9400BB219B /* Message.swift in Sources */,
+				BB2E475929867AD500BB219B /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

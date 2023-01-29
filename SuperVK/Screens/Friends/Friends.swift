@@ -9,9 +9,8 @@ import SwiftUI
 
 struct Friends: View {
     var body: some View {
-        VStack {
-            
-        }
+        NavigationBar(title: "Друзья",
+                      description: "Здесь будет список друзей")
     }
 }
 

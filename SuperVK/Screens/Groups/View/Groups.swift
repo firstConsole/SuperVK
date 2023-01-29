@@ -9,24 +9,9 @@ import SwiftUI
 
 struct Groups: View {
     
-    @State var groups: [GroupsItems] = []
-    @State var imageGroup: UIImage?
-    let getGroups = GetGroups()
-    
     var body: some View {
-        VStack {
-            Button {
-                loadGroups()
-            } label: {
-                Text("LOAD GROUPS DATA")
-            }
-            
-            List(groups) { item in
-                GroupsCell(groupImage: item.photo200,
-                           groupName: item.name,
-                           groupDescription: item.screenName)
-            }
-        }
+        NavigationBar(title: "Группы",
+                      description: "Здесь будет список групп")
     }
 }
 

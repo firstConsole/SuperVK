@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Message: View {
     var body: some View {
-        Text("Здесь будут чаты...")
+        NavigationBar(title: "Чаты",
+                      description: "Здесь будет список чатов")
     }
 }
 
