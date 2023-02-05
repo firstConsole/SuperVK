@@ -10,8 +10,7 @@ import SwiftUI
 struct Feed: View {
     
     var body: some View {
-        NavigationBar(title: "Новости",
-                      description: "Здесь будет лента новостей")
+        NavigationBar(title: "Новости")
     }
 }
 

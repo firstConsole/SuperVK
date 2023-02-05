@@ -50,10 +50,10 @@ struct TabBar: View {
                     Spacer()
                 }
             }
-            .frame(width: nil, height: 60)
+            .frame(width: nil, height: 55)
             .background(.thinMaterial)
-            .cornerRadius(10)
-            .padding()
+            .cornerRadius(20)
+            .padding(5)
         }
     }
 }

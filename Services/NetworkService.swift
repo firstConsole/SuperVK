@@ -5,8 +5,8 @@
 //  Created by Алексей Артамонов on 08.01.2023.
 //
 
-import Foundation
 import WebKit
+import SwiftUI
 
 final class NetworkSevice {
     
@@ -69,5 +69,41 @@ final class NetworkSevice {
             }
             completionOnMain(.success(responseData))
         }.resume()
+    }
+}
+
+/// Struct for show image from URL
+struct URLImage: View {
+    var url: String
+    var width: CGFloat
+    var height: CGFloat
+    
+    @State var data: Data?
+    
+    var body: some View {
+        if let data = data, let image = UIImage(data: data) {
+            Image(uiImage: image)
+                .resizable()
+                .frame(width: width,
+                       height: height)
+        } else {
+            Image("defaultUser")
+                .resizable()
+                .frame(width: 40, height: 40)
+                .onAppear {
+                    fetchData()
+                }
+        }
+    }
+    
+    private func fetchData() {
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        let task = Session.authentification.urlSession.dataTask(with: url) { data, _, _ in
+            self.data = data
+        }
+        task.resume()
     }
 }

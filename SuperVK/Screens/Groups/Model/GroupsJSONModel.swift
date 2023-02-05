@@ -1,17 +1,17 @@
 //
-//  JSONModel.swift
+//  GroupsJSONModel.swift
 //  SuperVK
 //
-//  Created by Алексей Артамонов on 15.01.2023.
+//  Created by Алексей Артамонов on 29.01.2023.
 //
 
 import Foundation
 
-struct JSONModel: Codable {
+struct GroupsJSONModel: Hashable, Codable {
     let response: Response
 }
 
-struct Response: Codable {
+struct Response: Hashable, Codable {
     let items: [GroupsItems]
     let nextFrom: String?
     
@@ -21,9 +21,9 @@ struct Response: Codable {
     }
 }
 
-struct GroupsItems: Codable, Identifiable {
+struct GroupsItems: Hashable, Codable, Identifiable {
     let id: Int?
-    let name: String?
+    let name: String
     let screenName: String?
     let photo200: String?
     
