@@ -8,49 +8,42 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @State var selectedTab: Tab = .feed
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
     var body: some View {
-        NavigationView {
-            TabView {
-                Feed()
-                    .tabItem {
-                        Label("Новости", systemImage: "newspaper")
-                    }
-                Groups()
-                    .tabItem {
-                        Label("Группы", systemImage: "person.2.crop.square.stack")
-                    }
-                Friends()
-                    .tabItem {
-                        Label("Друзья", systemImage: "person.2")
-                    }
-                Message()
-                    .tabItem {
-                        Label("Чаты", systemImage: "bubble.middle.bottom")
-                    }
-            }
-            
-            // MARK: Tab bar style configuration
-            .accentColor(Color.accentColor)
-            
-            // MARK: - Navigation bar style configuration
-            
-//            .navigationTitle(Text("Новости"))
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.accentColor, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Image(systemName: "newspaper")
-                            .foregroundColor(.white)
-                            .font(Font.headline)
-                        Text("Новости")
-                            .foregroundColor(.white)
-                            .font(Font.headline)
+        ZStack {
+            VStack {
+                TabView(selection: $selectedTab) {
+                    ForEach(Tab.allCases, id: \.rawValue) { tab in
+                        switch tab {
+                        case .feed:
+                            Feed()
+                                .tag(tab)
+                        case .friends:
+                            Friends()
+                                .tag(tab)
+                        case .groups:
+                            Groups()
+                                .tag(tab)
+                        case .message:
+                            Message()
+                                .tag(tab)
+                        }
                     }
                 }
             }
+            
+            VStack {
+                Spacer()
+                TabBar(selectedTab: $selectedTab)
+            }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

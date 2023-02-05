@@ -5,8 +5,8 @@
 //  Created by Алексей Артамонов on 08.01.2023.
 //
 
-import Foundation
 import WebKit
+import SwiftUI
 
 final class NetworkSevice {
     
@@ -50,5 +50,60 @@ final class NetworkSevice {
         }
         
         return url
+    }
+    
+    /// Service for load images
+    func imageLoad(url: URL, completion: @escaping(Result<Data, Error>) -> Void) {
+        let completionOnMain: (Result<Data, Error>) -> Void = { result in
+            DispatchQueue.main.async {
+                completion(result)
+            }
+        }
+        Session.authentification.urlSession.dataTask(with: url) { data, response, error in
+            guard let responseData = data, error == nil else {
+                if let error = error {
+                    completionOnMain(.failure(error))
+                    print(error)
+                }
+                return
+            }
+            completionOnMain(.success(responseData))
+        }.resume()
+    }
+}
+
+/// Struct for show image from URL
+struct URLImage: View {
+    var url: String
+    var width: CGFloat
+    var height: CGFloat
+    
+    @State var data: Data?
+    
+    var body: some View {
+        if let data = data, let image = UIImage(data: data) {
+            Image(uiImage: image)
+                .resizable()
+                .frame(width: width,
+                       height: height)
+        } else {
+            Image("defaultUser")
+                .resizable()
+                .frame(width: 40, height: 40)
+                .onAppear {
+                    fetchData()
+                }
+        }
+    }
+    
+    private func fetchData() {
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        let task = Session.authentification.urlSession.dataTask(with: url) { data, _, _ in
+            self.data = data
+        }
+        task.resume()
     }
 }

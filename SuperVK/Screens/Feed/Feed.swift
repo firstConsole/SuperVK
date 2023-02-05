@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct Feed: View {
+    
     var body: some View {
-        Text("Здесь будет лента новостей...")
-            .navigationBarBackButtonHidden(true)
+        NavigationBar(title: "Новости")
     }
 }
 

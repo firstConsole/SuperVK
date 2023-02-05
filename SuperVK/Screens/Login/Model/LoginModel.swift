@@ -18,19 +18,3 @@ extension Login {
         }
     }
 }
-
-extension WebLogin {
-    func checkLogin(token: String?, id: Int?) {
-//        guard let token = token,
-//              let id = id
-//        else {
-//            return
-//        }
-        
-        if token != nil && id != nil {
-            isSelected = true
-        } else {
-            print("Token & ID is nil")
-        }
-    }
-}
